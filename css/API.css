@@ -1,0 +1,96 @@
+.container-API {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.book-holder {
+  /*border: 2px solid firebrick;*/
+  height: 35rem;
+  width: 60rem;
+  display: flex;
+  gap: 2rem;
+
+  .current-book-cover {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(90, 153, 74);
+    box-shadow: -3px 3px 1px rgb(217, 217, 217);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    .current-book-cover-info {
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .current-book-info {
+    background-color: rgb(249, 246, 241);
+    /*border: 2px solid pink;*/
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .current-book-info-holder {
+      /*border: 2px solid rebeccapurple;*/
+      display: flex;
+      flex-direction: column;
+      margin: 0 2rem 2rem 2rem;
+      gap: 1rem;
+
+      h1 {
+        font-size: 2rem;
+        margin-right: -2rem;
+      }
+    }
+
+    .current-book-extra-info {
+      /*border: 2px solid firebrick;*/
+      background-color: rgb(222, 218, 213);
+      display: flex;
+      margin: 2rem;
+      justify-content: space-between;
+      padding: 1rem 3rem 1rem 1rem;
+
+      .extra-info-left, .extra-info-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+    }
+
+    .current-book-read-btn {
+      background-color: rgb(174, 173, 156);
+      width: 10rem;
+      height: 3rem;
+      margin: 0 0 0 2rem;
+      border: none;
+      border-radius: 0.4rem;
+      cursor: url("/assets/cursor.png"), auto;
+    }
+  }
+}
+
+.line-container {
+  display: flex;
+  justify-content: flex-end;
+
+  .line {
+    width: 80vw;
+    height: 0.2rem;
+    background-color: rgb(43, 116, 109);
+  }
+}

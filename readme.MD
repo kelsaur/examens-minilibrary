@@ -1,0 +1,1 @@
+Jag kommer behöva komplettera min inlämning. Har inte förstått TS tillräckligt för att kunna klara det här.
