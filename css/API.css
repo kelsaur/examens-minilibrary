@@ -81,6 +81,9 @@
       border-radius: 0.4rem;
       cursor: url("/assets/cursor.png"), auto;
     }
+    .current-book-read-btn:hover {
+      background-color: rgb(232, 230, 208);
+    }
   }
 }
 

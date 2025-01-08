@@ -21,9 +21,9 @@ const fetchBooksData = () => __awaiter(this, void 0, void 0, function* () {
     const response = yield fetch('https://my-json-server.typicode.com/zocom-christoffer-wallenberg/books-api/books', {
         method: 'GET'
     });
-    //console.log(response) Kollar vad reponsen heter
+    //console.log(response) To see what response is called
     const booksData = yield response.json();
-    console.log('Fetched data: ', booksData);
+    //console.log('Fetched data: ', booksData)
     return booksData; //To be able to use it later in fetchAndDisplayBookInfo
 });
 fetchBooksData();
@@ -31,12 +31,12 @@ fetchBooksData();
 const fetchAndDisplayBookInfo = () => __awaiter(this, void 0, void 0, function* () {
     //Calling and saving the books info in a variable
     let booksData = yield fetchBooksData();
-    console.log(booksData);
+    //console.log(booksData)
     //Loop through the fetched data, since both fetched data and array of books have just as many indexes, only one lop is needed
     for (let i = 0; i < booksData.length; i++) {
         const currentBookData = booksData[i];
         const currentBook = books[i];
-        console.log(booksData[i]); //- See fetched data names
+        //console.log(booksData[i]) //- See fetched data names
         //If indexes match print out this to querySelectd classes in HTML
         if (currentBook) {
             currentBook.addEventListener('click', () => {
@@ -67,7 +67,7 @@ const fetchAndDisplayBookInfo = () => __awaiter(this, void 0, void 0, function* 
                     currentBookCoverTitle.textContent = currentBookData.title;
                 if (currentBookCoverAuthor)
                     currentBookCoverAuthor.textContent = currentBookData.author;
-                console.log(currentBookData);
+                //console.log(currentBookData)
                 //Decide which CSS class is displayed based on te chosen planet index
                 let currentBookColor = document.querySelector('.current-book-cover');
                 if (i === 0) {
@@ -99,6 +99,12 @@ const fetchAndDisplayBookInfo = () => __awaiter(this, void 0, void 0, function* 
                 const containerApi = document.querySelector('.container-API');
                 container.style.display = 'none';
                 containerApi.style.display = 'flex';
+                //Button to get back
+                const takeMeBackBtn = document.querySelector('.current-book-read-btn');
+                takeMeBackBtn.addEventListener('click', function () {
+                    container.style.display = 'flex';
+                    containerApi.style.display = 'none';
+                });
             });
         }
     }

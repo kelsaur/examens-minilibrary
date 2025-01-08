@@ -25,27 +25,27 @@ const fetchBooksData = async (): Promise<bookData[]> => {
   const response = await fetch('https://my-json-server.typicode.com/zocom-christoffer-wallenberg/books-api/books', {
     method: 'GET'
   })
-  //console.log(response) Kollar vad reponsen heter
+  //console.log(response) To see what response is called
   
   const booksData: bookData[] = await response.json()
-  console.log('Fetched data: ', booksData)
+  //console.log('Fetched data: ', booksData)
   return booksData //To be able to use it later in fetchAndDisplayBookInfo
 }
 fetchBooksData()
 
 
 //Display the fetched books info
-const fetchAndDisplayBookInfo = async () => {
+const fetchAndDisplayBookInfo = async(): Promise<void> => {
   //Calling and saving the books info in a variable
   let booksData = await fetchBooksData()
-  console.log(booksData)
+  //console.log(booksData)
 
   //Loop through the fetched data, since both fetched data and array of books have just as many indexes, only one lop is needed
   for (let i = 0; i < booksData.length; i++) {
     
     const currentBookData = booksData[i]
     const currentBook = books[i]
-    console.log(booksData[i]) //- See fetched data names
+    //console.log(booksData[i]) //- See fetched data names
 
 
     //If indexes match print out this to querySelectd classes in HTML
@@ -73,7 +73,7 @@ const fetchAndDisplayBookInfo = async () => {
       if(currentBookCoverAuthor) currentBookCoverAuthor.textContent = currentBookData.author
 
 
-      console.log(currentBookData)
+      //console.log(currentBookData)
 
 
     //Decide which CSS class is displayed based on te chosen planet index
@@ -103,6 +103,13 @@ const fetchAndDisplayBookInfo = async () => {
 
     container.style.display = 'none'
     containerApi.style.display = 'flex'
+
+    //Button to get back
+    const takeMeBackBtn: HTMLElement | null = document.querySelector('.current-book-read-btn')
+    takeMeBackBtn.addEventListener('click', function() {
+      container.style.display = 'flex'
+      containerApi.style.display = 'none'
+      })
     })
     }
   }
